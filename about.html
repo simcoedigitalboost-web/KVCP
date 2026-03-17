@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Kel & KCVP Inc — Barrie Plumber & Hardscaping</title>
+  <meta name="description" content="Meet Kel, the licensed plumber and hardscaping expert behind KCVP Inc. Serving Barrie and Simcoe County with honest, reliable trades work.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+/* ============================================
+   KCVP Inc — Plumbing & Hardscaping
+   Mobile-first CSS
+   ============================================ */
+
+/* --- Google Fonts loaded in HTML head --- */
+
+/* --- CSS Variables --- */
+:root {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #242424;
+  --bg-card: #2a2a2a;
+  --bg-elevated: #333333;
+  --text-primary: #f0ece4;
+  --text-secondary: #a8a299;
+  --text-muted: #6b6560;
+  --accent: #c8854a;
+  --accent-light: #daa06d;
+  --accent-dark: #a66a30;
+  --accent-glow: rgba(200, 133, 74, 0.15);
+  --emergency: #c0392b;
+  --emergency-light: #e74c3c;
+  --white: #ffffff;
+  --border: rgba(255, 255, 255, 0.06);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.5);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'Outfit', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --max-width: 1200px;
+  --header-height: 72px;
+}
+
+/* --- Reset & Base --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--accent-light);
+}
+
+/* --- Utility --- */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  max-width: 560px;
+  line-height: 1.7;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-center .section-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Buttons --- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg-primary);
+}
+
+.btn-primary:hover {
+  background: var(--accent-light);
+  color: var(--bg-primary);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(200, 133, 74, 0.3);
+}
+
+.btn-emergency {
+  background: var(--emergency);
+  color: var(--white);
+  animation: pulse-emergency 2.5s infinite;
+}
+
+.btn-emergency:hover {
+  background: var(--emergency-light);
+  color: var(--white);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(192, 57, 43, 0.4);
+}
+
+@keyframes pulse-emergency {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(192, 57, 43, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(192, 57, 43, 0); }
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid rgba(255,255,255,0.15);
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(26, 26, 26, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  height: var(--header-height);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.logo-name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  color: var(--text-primary);
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+}
+
+.logo-tagline {
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  color: var(--text-muted);
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+}
+
+.header-phone {
+  display: none;
+}
+
+.header-phone a {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+
+.header-phone .phone-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: var(--font-mono);
+}
+
+/* Mobile nav toggle */
+.nav-toggle {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--text-primary);
+  transition: all 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.nav-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Nav */
+.main-nav {
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  padding: 32px 20px;
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+  z-index: 999;
+}
+
+.main-nav.open {
+  transform: translateX(0);
+}
+
+.main-nav a {
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  font-weight: 500;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: var(--accent);
+}
+
+.nav-cta {
+  margin-top: 24px;
+}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero {
+  padding: 120px 0 60px;
+  position: relative;
+  overflow: hidden;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(ellipse at 20% 50%, rgba(200, 133, 74, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(200, 133, 74, 0.03) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-emergency-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(192, 57, 43, 0.12);
+  border: 1px solid rgba(192, 57, 43, 0.3);
+  border-radius: 100px;
+  padding: 8px 18px;
+  margin-bottom: 28px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--emergency-light);
+  letter-spacing: 0.5px;
+}
+
+.hero-emergency-badge .pulse-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--emergency);
+  border-radius: 50%;
+  animation: pulse-dot 1.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.4); }
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  line-height: 1.12;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.hero-title .accent {
+  color: var(--accent);
+}
+
+.hero-description {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 32px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  margin-top: 48px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.hero-stat {
+  background: var(--bg-secondary);
+  padding: 20px 16px;
+  text-align: center;
+}
+
+.hero-stat .stat-number {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.hero-stat .stat-label {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-family: var(--font-mono);
+}
+
+/* ============================================
+   EMERGENCY BANNER
+   ============================================ */
+.emergency-banner {
+  background: linear-gradient(135deg, var(--emergency) 0%, #962d22 100%);
+  padding: 24px 0;
+  text-align: center;
+}
+
+.emergency-banner-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.emergency-banner h3 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--white);
+}
+
+.emergency-banner p {
+  color: rgba(255,255,255,0.8);
+  font-size: 0.9rem;
+}
+
+.emergency-banner .phone-number {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--white);
+  letter-spacing: 1px;
+}
+
+/* ============================================
+   SERVICES OVERVIEW
+   ============================================ */
+.services-section {
+  padding: 72px 0;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 40px;
+}
+
+.service-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s ease;
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-card:hover {
+  border-color: rgba(200, 133, 74, 0.2);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.service-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-glow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 1.3rem;
+}
+
+.service-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+.service-card .card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.service-card .card-link::after {
+  content: '\2192';
+  transition: transform 0.2s ease;
+}
+
+.service-card:hover .card-link::after {
+  transform: translateX(4px);
+}
+
+/* ============================================
+   WHY CHOOSE US
+   ============================================ */
+.why-section {
+  padding: 72px 0;
+  background: var(--bg-secondary);
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.why-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.why-number {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: rgba(200, 133, 74, 0.2);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 40px;
+}
+
+.why-item h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.why-item p {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+/* ============================================
+   SERVICE AREA
+   ============================================ */
+.area-section {
+  padding: 72px 0;
+}
+
+.area-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.area-tag {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  transition: all 0.2s ease;
+}
+
+.area-tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.area-tag.primary {
+  background: var(--accent-glow);
+  border-color: rgba(200, 133, 74, 0.3);
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ============================================
+   CTA SECTION
+   ============================================ */
+.cta-section {
+  padding: 72px 0;
+  background: var(--bg-secondary);
+}
+
+.cta-box {
+  background: linear-gradient(135deg, var(--bg-elevated) 0%, var(--bg-card) 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-box::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(ellipse at center, rgba(200, 133, 74, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.cta-box .section-title {
+  position: relative;
+}
+
+.cta-box .section-subtitle {
+  margin: 0 auto 28px;
+  position: relative;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  position: relative;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  padding: 48px 0 24px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.footer-brand .logo-name {
+  margin-bottom: 8px;
+}
+
+.footer-brand p {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+.footer-col h4 {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col li {
+  margin-bottom: 10px;
+}
+
+.footer-col a {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.footer-col a:hover {
+  color: var(--accent);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.footer-bottom .credit {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+.footer-bottom .credit a {
+  color: var(--text-muted);
+}
+
+.footer-bottom .credit a:hover {
+  color: var(--accent);
+}
+
+/* ============================================
+   PAGE-LEVEL STYLES
+   ============================================ */
+
+/* --- Services Pages Hero --- */
+.page-hero {
+  padding: 120px 0 48px;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border);
+}
+
+.page-hero .section-title {
+  font-size: 2rem;
+}
+
+/* --- Service Detail Blocks --- */
+.service-detail {
+  padding: 60px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.service-detail:last-child {
+  border-bottom: none;
+}
+
+.service-detail h3 {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.service-detail p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.service-list {
+  list-style: none;
+  margin-top: 16px;
+}
+
+.service-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.service-list li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* --- Contact Form --- */
+.contact-section {
+  padding: 72px 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-info-block {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.contact-info-block h4 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin-bottom: 16px;
+}
+
+.contact-info-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.contact-info-item:last-child {
+  border-bottom: none;
+}
+
+.contact-info-item .info-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.contact-info-item .info-value {
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* --- About Page --- */
+.about-section {
+  padding: 60px 0;
+}
+
+.about-content p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 16px;
+  max-width: 680px;
+}
+
+.about-values {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+.about-value {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+
+.about-value h4 {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  margin-bottom: 6px;
+}
+
+.about-value p {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+/* ============================================
+   TABLET — 600px+
+   ============================================ */
+@media (min-width: 600px) {
+  .container {
+    padding: 0 32px;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cta-box {
+    padding: 56px 40px;
+  }
+
+  .cta-buttons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .footer-top {
+    grid-template-columns: 1.4fr 1fr 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1.2fr 1fr;
+  }
+
+  .about-values {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .page-hero .section-title {
+    font-size: 2.4rem;
+  }
+}
+
+/* ============================================
+   DESKTOP — 900px+
+   ============================================ */
+@media (min-width: 900px) {
+  .container {
+    padding: 0 48px;
+  }
+
+  .section-title {
+    font-size: 2.6rem;
+  }
+
+  .hero {
+    padding: 140px 0 80px;
+  }
+
+  .hero-title {
+    font-size: 3.6rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+  }
+
+  .services-section,
+  .why-section,
+  .area-section,
+  .cta-section {
+    padding: 96px 0;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .main-nav {
+    position: static;
+    flex-direction: row;
+    transform: none;
+    padding: 0;
+    background: transparent;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .main-nav a {
+    font-size: 0.88rem;
+    padding: 0;
+    border-bottom: none;
+  }
+
+  .header-phone {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0;
+  }
+
+  .nav-cta {
+    margin-top: 0;
+  }
+
+  .hero-stat .stat-number {
+    font-size: 2rem;
+  }
+
+  .emergency-banner-inner {
+    flex-direction: row;
+    justify-content: center;
+    gap: 24px;
+  }
+
+  .about-values {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ============================================
+   WIDE DESKTOP — 1100px+
+   ============================================ */
+@media (min-width: 1100px) {
+  .hero-title {
+    font-size: 4rem;
+  }
+
+  .services-grid {
+    gap: 24px;
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-delay-1 { transition-delay: 0.1s; }
+.fade-in-delay-2 { transition-delay: 0.2s; }
+.fade-in-delay-3 { transition-delay: 0.3s; }
+.fade-in-delay-4 { transition-delay: 0.4s; }
+.fade-in-delay-5 { transition-delay: 0.5s; }
+
+</style>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <span class="logo-name">KCVP Inc</span>
+        <span class="logo-tagline">Plumbing &amp; Hardscaping</span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="plumbing.html">Plumbing</a>
+        <a href="hardscaping.html">Hardscaping</a>
+        <a href="about.html" class="active">About</a>
+        <a href="contact.html">Contact</a>
+        <div class="nav-cta">
+          <a href="tel:+15197705152" class="btn btn-emergency">Call Now</a>
+        </div>
+      </nav>
+
+      <div class="header-phone">
+        <span class="phone-label">24/7 Emergency</span>
+        <a href="tel:+15197705152">(519) 770-5152</a>
+      </div>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ========== PAGE HERO ========== -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-label fade-in">About KCVP</span>
+      <h1 class="section-title fade-in">Meet Kel</h1>
+      <p class="section-subtitle fade-in">The person behind the work — and why doing it right the first time isn't a slogan, it's the only way we operate.</p>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT CONTENT ========== -->
+  <section class="about-section">
+    <div class="container">
+      <div class="about-content fade-in">
+        <p>KCVP Inc was built on a simple idea: homeowners deserve a contractor who shows up when they say they will, does the work right, and charges a fair price for it. Kel started KCVP after years of working in the trades and seeing the same problems over and over — sloppy work, inflated quotes, and contractors who disappear when something goes wrong.</p>
+
+        <p>As a licensed plumber with extensive hardscaping and excavation experience, Kel brings a rare combination of skills to every project. Most plumbers don't touch outdoor work. Most landscapers don't understand plumbing. KCVP does both — and that means better results for homeowners who need drainage, waterproofing, and outdoor spaces that actually work together.</p>
+
+        <p>Based in Barrie and serving communities across Simcoe County, KCVP handles everything from 3am emergency calls to summer patio builds. Every project gets the same standard of work — clean jobsites, honest communication, and results that hold up through Ontario's toughest seasons.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== VALUES ========== -->
+  <section class="why-section">
+    <div class="container">
+      <span class="section-label fade-in">How We Work</span>
+      <h2 class="section-title fade-in">What You Can Expect</h2>
+
+      <div class="about-values">
+        <div class="about-value fade-in fade-in-delay-1">
+          <h4>Honest Assessments</h4>
+          <p>If you don't need a new water heater, we'll tell you. If a cheaper fix will solve the problem, that's what we recommend. We earn trust by being straight with people.</p>
+        </div>
+        <div class="about-value fade-in fade-in-delay-2">
+          <h4>Clean Jobsites</h4>
+          <p>We don't leave a mess. Every day when we leave your property, you'll know we respect your home as much as we respect our craft.</p>
+        </div>
+        <div class="about-value fade-in fade-in-delay-3">
+          <h4>Clear Communication</h4>
+          <p>You'll know what we're doing, why we're doing it, and what it costs — before we start. No surprises, no scope creep, no awkward conversations at the end.</p>
+        </div>
+        <div class="about-value fade-in fade-in-delay-4">
+          <h4>We Stand Behind It</h4>
+          <p>If something isn't right, we come back and make it right. That's not a warranty — that's just how a good tradesperson operates.</p>
+        </div>
+        <div class="about-value fade-in fade-in-delay-5">
+          <h4>Licensed &amp; Insured</h4>
+          <p>Full licensing and comprehensive insurance. You're protected, your property is protected, and the work meets or exceeds Ontario building standards.</p>
+        </div>
+        <div class="about-value fade-in fade-in-delay-3">
+          <h4>Local Knowledge</h4>
+          <p>We live and work in Simcoe County. We know the soil, the water table, the frost line, and the bylaws. That local knowledge shows in every job we do.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <span class="section-label">Get In Touch</span>
+        <h2 class="section-title">Let's Talk About Your Project</h2>
+        <p class="section-subtitle">Whether you need an emergency plumber or you're planning a backyard overhaul — Kel's happy to chat. No pressure, no obligation.</p>
+        <div class="cta-buttons">
+          <a href="tel:+15197705152" class="btn btn-primary">Call (519) 770-5152</a>
+          <a href="contact.html" class="btn btn-outline">Send a Message</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div class="logo-name">KCVP Inc</div>
+          <p>Licensed plumbing and hardscaping services for Barrie and Simcoe County. Available 24/7 for emergencies.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="plumbing.html">Emergency Plumbing</a></li>
+            <li><a href="plumbing.html">Residential Plumbing</a></li>
+            <li><a href="hardscaping.html">Hardscaping</a></li>
+            <li><a href="hardscaping.html">Drainage & Grading</a></li>
+            <li><a href="hardscaping.html">Waterproofing</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Kel</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="tel:+15197705152">Emergency Line</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 KCVP Inc. All rights reserved. Barrie, Ontario.</p>
+        <p class="credit">Website by <a href="https://simcoedigitalboost.com" target="_blank" rel="noopener">Simcoe Digital Boost</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+/* ============================================
+   KCVP Inc — Main JavaScript
+   ============================================ */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // --- Mobile Nav Toggle ---
+  const navToggle = document.querySelector('.nav-toggle');
+  const mainNav = document.querySelector('.main-nav');
+
+  if (navToggle && mainNav) {
+    navToggle.addEventListener('click', () => {
+      navToggle.classList.toggle('active');
+      mainNav.classList.toggle('open');
+      document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
+    });
+
+    // Close nav on link click
+    mainNav.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navToggle.classList.remove('active');
+        mainNav.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  // --- Scroll Fade-In ---
+  const fadeEls = document.querySelectorAll('.fade-in');
+
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    fadeEls.forEach(el => observer.observe(el));
+  } else {
+    fadeEls.forEach(el => el.classList.add('visible'));
+  }
+
+  // --- Header scroll effect ---
+  const header = document.querySelector('.site-header');
+  let lastScroll = 0;
+
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > 60) {
+      header.style.boxShadow = '0 2px 20px rgba(0,0,0,0.3)';
+    } else {
+      header.style.boxShadow = 'none';
+    }
+    lastScroll = currentScroll;
+  }, { passive: true });
+
+  // --- Active nav link ---
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.main-nav a').forEach(link => {
+    const href = link.getAttribute('href').split('/').pop();
+    if (href === currentPage) {
+      link.classList.add('active');
+    }
+  });
+
+});
+
+</script>
+</body>
+</html>
