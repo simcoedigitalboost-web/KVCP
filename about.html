@@ -281,29 +281,28 @@ a:hover {
 /* Mobile Nav */
 .main-nav {
   position: fixed;
-  top: var(--header-height);
+  top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
-  background: #000000;
+  width: 100%;
+  height: 100%;
+  background-color: #000000 !important;
   border-top: 3px solid var(--accent);
-  display: flex;
+  display: none;
   flex-direction: column;
-  padding: 32px 20px;
-  transform: translateX(100%);
-  transition: transform 0.35s ease;
-  z-index: 999;
+  padding: 100px 24px 32px;
+  z-index: 9999;
+  overflow-y: auto;
 }
 
 .main-nav.open {
-  transform: translateX(0);
+  display: flex !important;
 }
 
 .main-nav a {
-  font-size: 1.3rem;
-  color: #ffffff;
-  padding: 18px 0;
-  border-bottom: 1px solid rgba(200, 133, 74, 0.25);
+  font-size: 1.4rem;
+  color: #ffffff !important;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(200, 133, 74, 0.3);
   font-weight: 600;
 }
 
@@ -1061,18 +1060,24 @@ a:hover {
 
   .main-nav {
     position: static;
+    display: flex !important;
     flex-direction: row;
     transform: none;
     padding: 0;
-    background: transparent;
+    background: transparent !important;
     align-items: center;
     gap: 32px;
+    height: auto;
+    width: auto;
+    overflow: visible;
+    border-top: none;
   }
 
   .main-nav a {
     font-size: 0.88rem;
     padding: 0;
     border-bottom: none;
+    color: var(--text-primary) !important;
   }
 
   .header-phone {
